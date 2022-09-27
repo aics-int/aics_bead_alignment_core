@@ -1,11 +1,9 @@
 import argparse
 import logging
-import os
-import pwd
 import sys
 import traceback
 
-from aics_bead_alignment_core.align import (
+from aics_bead_alignment_core.align_utils import (
     align,
 )
 
