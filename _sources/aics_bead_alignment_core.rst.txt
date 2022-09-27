@@ -1,0 +1,21 @@
+aics\_bead\_alignment\_core package
+===================================
+
+Submodules
+----------
+
+aics\_bead\_alignment\_core.example module
+------------------------------------------
+
+.. automodule:: aics_bead_alignment_core.example
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: aics_bead_alignment_core
+   :members:
+   :undoc-members:
+   :show-inheritance:
