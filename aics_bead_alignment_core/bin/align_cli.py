@@ -13,8 +13,8 @@ log = logging.getLogger()
 class Args(argparse.Namespace):
     def __init__(self):
         self.debug = False
-        self.raw_image_path_one = str(),
-        self.raw_image_path_two =str(),
+        self.raw_image_path_one = (str(),)
+        self.raw_image_path_two = (str(),)
         self.__parse()
 
     def __parse(self):
@@ -43,16 +43,16 @@ class Args(argparse.Namespace):
         p.add_argument(
             "--scene",
             type=str,
-            help= "String representation of scene",
-            default= "",
+            help="String representation of scene",
+            default="",
             required=False,
         )
-        
+
         p.add_argument(
             "--eval_method",
             type=str,
-            help= "opencv evaluation method",
-            default= "'cv.TM_CCOEFF_NORMED'",
+            help="opencv evaluation method",
+            default="'cv.TM_CCOEFF_NORMED'",
             required=False,
         )
 
@@ -66,12 +66,13 @@ def main():
     debug = args.debug
 
     try:
-        align(
-            raw_image_path_one = args.raw_image_path_one,
-            raw_image_path_two = args.raw_image_path_two,
-            scene = args.scene,
-            eval_method = args.eval_method
+        shift = align(
+            raw_image_path_one=args.raw_image_path_one,
+            raw_image_path_two=args.raw_image_path_two,
+            scene=args.scene,
+            eval_method=args.eval_method,
         )
+        print(shift)
 
     except Exception as e:
         log.error("=============================================")
