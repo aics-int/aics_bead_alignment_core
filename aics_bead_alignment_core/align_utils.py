@@ -52,6 +52,9 @@ def align(
     shift = [top_left[0] - 250, top_left[1] - 250]
 
     # adjust for rotation by AicsImage
-    adjusted_shift = (-shift[1], shift[0])
+    adjusted_shift = (
+        int(micron_conversion_const * -shift[1]),
+        int(micron_conversion_const * shift[0]),
+    )
 
-    return micron_conversion_const * adjusted_shift
+    return adjusted_shift
