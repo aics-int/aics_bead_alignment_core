@@ -48,14 +48,6 @@ class Args(argparse.Namespace):
             required=False,
         )
 
-        p.add_argument(
-            "--eval_method",
-            type=str,
-            help="opencv evaluation method",
-            default="'cv.TM_CCOEFF_NORMED'",
-            required=False,
-        )
-
         p.parse_args(namespace=self)
 
     ###############################################################################
@@ -70,7 +62,6 @@ def main():
             raw_image_path_one=args.raw_image_path_one,
             raw_image_path_two=args.raw_image_path_two,
             scene=args.scene,
-            eval_method=args.eval_method,
         )
         print(shift)
 
