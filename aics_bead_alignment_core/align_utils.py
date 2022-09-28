@@ -1,15 +1,21 @@
 from aicsimageio import AICSImage
 import cv2 as cv
 
+from .conversions import conversions
+
 
 def align(
-    raw_image_path_one, raw_image_path_two, scene="", eval_method="cv.TM_CCOEFF_NORMED"
+    raw_image_path_one: str,
+    raw_image_path_two: str,
+    scene: str = "",
+    eval_method: str = "cv.TM_CCOEFF_NORMED",
+    objective: str = "20X",
 ) -> tuple:
 
     # Read in Images as AICSImage
     img1 = AICSImage(raw_image_path_one)
     img2 = AICSImage(raw_image_path_two)
-
+    micron_conversion_const = conversions.MICRON_CONVERSION[objective]
     # AICS Image defaults to the first scene
     if scene != "":
         img1.set_scene(scene)
@@ -48,4 +54,4 @@ def align(
     # adjust for rotation by AicsImage
     adjusted_shift = (-shift[1], shift[0])
 
-    return adjusted_shift
+    return micron_conversion_const * adjusted_shift

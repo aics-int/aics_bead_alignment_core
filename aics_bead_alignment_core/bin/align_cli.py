@@ -48,6 +48,14 @@ class Args(argparse.Namespace):
             required=False,
         )
 
+        p.add_argument(
+            "--objective",
+            type=str,
+            help="String representation of objective (ex. 20X)",
+            default="20X",
+            required=False,
+        )
+
         p.parse_args(namespace=self)
 
     ###############################################################################
@@ -62,6 +70,7 @@ def main():
             raw_image_path_one=args.raw_image_path_one,
             raw_image_path_two=args.raw_image_path_two,
             scene=args.scene,
+            objective=args.objective,
         )
         print(shift)
 
