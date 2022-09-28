@@ -65,6 +65,7 @@ setup(
     description="A uitlity package containing functions to align bead images ",
     install_requires=requirements,
     extras_require=extra_requirements,
+    setup_requires=setup_requirements,
     entry_points={
         "console_scripts": [
             "bead_align = aics_bead_alignment_core.bin.align_cli:main".format(
@@ -73,16 +74,18 @@ setup(
         ],
     },
     license="Allen Institute Software License",
-    long_description=readme(),
+    long_description=readme,
     long_description_content_type="text/markdown",
     include_package_data=True,
     keywords="aics_bead_alignment_core",
     name="aics_bead_alignment_core",
     packages=find_packages(exclude=["tests", "*.tests", "*.tests.*"]),
-    python_requires=">=3.9",  # This is driven by aicsimageio constraints
+    python_requires=">=3.8",  # This is driven by aicsimageio constraints
     url="https://github.com/BrianWhitneyAI/aics_bead_alignment_core",
     # Do not edit this string manually, always use bumpversion
     # Details in CONTRIBUTING.rst
+    test_suite="aics_bead_alignment_core/tests",
+    tests_require=test_requirements,
     version="0.0.0",
     zip_safe=False,
 )
