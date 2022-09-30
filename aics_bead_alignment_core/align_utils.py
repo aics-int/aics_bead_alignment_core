@@ -12,6 +12,31 @@ def align(
     objective: str = "20X",
 ) -> tuple:
 
+    """Process Two .czi images to determine predicted micron shift from `raw_image_path_one` to `raw_image_path_two`
+
+    Parameters
+    ----------
+    raw_image_path_one : str
+        Path to the original image. (timepoint 0).
+    raw_image_path_two : str
+        Path to the new image. (timepoint 1).
+
+    Keyword Arguments
+    -----------------
+    scene: str
+        An optional parameter to look at a particular scene of a .czi.
+    env_method: str
+        The opencv2 evaluation method you would like to use. Default is set to cv.TM_CCOEFF_NORMED.
+    objective: str
+        The magnification of the image in order to determine the pixel to micron ratio. Default is
+        set to 20X.
+
+    Returns
+    -------
+    adjusted_shift: tuple(int,int)
+        Returns the predicted shift in microns (x,y).
+    """
+
     # Read in Images as AICSImage
     img1 = AICSImage(raw_image_path_one)
     img2 = AICSImage(raw_image_path_two)
