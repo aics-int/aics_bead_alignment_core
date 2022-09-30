@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-MODULE_VERSION = "0.0.0"
+MODULE_VERSION = "1.0.0"
 PACKAGE_NAME = "aics_bead_alignment_core"
 
 """The setup script."""
