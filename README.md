@@ -1,5 +1,5 @@
 # aics_bead_alignment_core
-aics_bead_alignment_core==1.1.0
+aics_bead_alignment_core==1.2.0
 
 [![Build Status](https://github.com/BrianWhitneyAI/aics_bead_alignment_core/workflows/Build%20Main/badge.svg)](https://github.com/BrianWhitneyAI/aics_bead_alignment_core/actions)
 [![Documentation](https://github.com/BrianWhitneyAI/aics_bead_alignment_core/workflows/Documentation/badge.svg)](https://BrianWhitneyAI.github.io/aics_bead_alignment_core/)
